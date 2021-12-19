@@ -72,7 +72,7 @@ namespace BootChanger
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
                 }
-            };           
+            };
             p.Start();
             p.WaitForExit();
             string o= p.StandardOutput.ReadToEnd();
@@ -82,7 +82,7 @@ namespace BootChanger
         /// List Current Bootloader folder
         ///
         public void List_Bootloader()
-        {            
+        {
             richTextBox1.AppendText(Environment.NewLine+"Scanning Bootloaders : ", Color.Yellow);
             if (Directory.Exists(@"Z:\EFI\Microsoft"))
             {
@@ -144,7 +144,7 @@ namespace BootChanger
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            richTextBox1.AppendText(Environment.NewLine+"Setting Default Bootloader : ", Color.Yellow);
+            richTextBox1.AppendText("Setting Default Bootloader : ", Color.Yellow);
             if (comboBox1.SelectedItem.ToString().Contains("CLOVER"))
             {
                 richTextBox1.AppendText("Clover", Color.LightGreen);
