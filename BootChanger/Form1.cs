@@ -72,7 +72,7 @@ namespace BootChanger
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
                 }
-            };           
+            };
             p.Start();
             p.WaitForExit();
             string o= p.StandardOutput.ReadToEnd();
@@ -82,7 +82,7 @@ namespace BootChanger
         /// List Current Bootloader folder
         ///
         public void List_Bootloader()
-        {            
+        {
             richTextBox1.AppendText(Environment.NewLine+"Scanning Bootloaders : ", Color.Yellow);
             if (Directory.Exists(@"Z:\EFI\Microsoft"))
             {
