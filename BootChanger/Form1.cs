@@ -23,7 +23,6 @@ namespace BootChanger
         ///
         private void ESPMount()
         {
-            richTextBox1.AppendText("Secure Boot Must Be Disabled.", Color.Red);
             richTextBox1.AppendText(Environment.NewLine+"Mounting EFI System Partition : ", Color.Yellow);
             try
             {
@@ -125,10 +124,12 @@ namespace BootChanger
          }
         private void Form1_Load(object sender, EventArgs e)
         {
+            richTextBox1.AppendText("Secure Boot Must Be Disabled.", Color.Red);
             label1.Text = "Current BootLoader List";
             richTextBox1.ReadOnly = true;
             ESPMount();
             List_Bootloader();
+            MessageBox.Show("The developer will not be responsible if boot fails." + Environment.NewLine + "Use at your own risk.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void AppClose(object sender, FormClosingEventArgs e)
